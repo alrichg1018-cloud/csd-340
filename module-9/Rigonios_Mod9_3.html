@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <script>
+        var firstWord = "gym";
+        var secondWord = "weights";
+        var thirdWord = "stronger";
+        var fourthWord = "progress";
+    </script>
+</head>
+
+<body>
+    <h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+    <p>
+        Every morning, I try to make time to go to the
+        <span id="word1">________</span>.
+        It is one of my favorite ways to start the day.
+        Working out helps me stay focused and motivated.
+    </p>
+
+    <p>
+        When I arrive, I usually begin by lifting
+        <span id="word2">________</span>.
+        I enjoy challenging myself and trying to become
+        <span id="word3">________</span>
+        than I was before.
+    </p>
+
+    <p>
+        One thing I have learned is that results take time.
+        Staying consistent and tracking my
+        <span id="word4">________</span>
+        reminds me that every workout counts.
+        Even small improvements can make a difference.
+    </p>
+
+    <button onclick="document.getElementById('word1').innerHTML = firstWord">
+        Reveal Word 1
+    </button>
+
+    <button onclick="document.getElementById('word2').innerHTML = secondWord">
+        Reveal Word 2
+    </button>
+
+    <button onclick="document.getElementById('word3').innerHTML = thirdWord">
+        Reveal Word 3
+    </button>
+
+    <button onclick="document.getElementById('word4').innerHTML = fourthWord">
+        Reveal Word 4
+    </button>
+
+</body>
+</html>
