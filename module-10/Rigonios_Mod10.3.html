@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f7fb;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #23476b;
+        }
+
+        .image-container {
+            margin: 30px auto;
+            max-width: 650px;
+        }
+
+        .interactive-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        #message {
+            font-size: 20px;
+            color: #23476b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+    <h2>Interactive Day and Night Scene</h2>
+
+    <p>Click the image to switch between day and night!</p>
+
+    <div class="image-container">
+        <img id="sceneImage"
+             class="interactive-image"
+             src="images/day.png"
+             alt="Daytime mountain landscape"
+             data-mode="day"
+             tabindex="0"
+             role="button"
+             onclick="changeScene()"
+             onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); changeScene(); }">
+    </div>
+
+    <p id="message" aria-live="polite">
+        It's a beautiful sunny day!
+    </p>
+
+    <script>
+        function changeScene() {
+            const image = document.getElementById("sceneImage");
+            const message = document.getElementById("message");
+
+            if (image.dataset.mode === "day") {
+                image.src = "images/night.png";
+                image.alt = "Nighttime mountain landscape";
+                image.dataset.mode = "night";
+                message.textContent = "The sun has set. Good night!";
+            } else {
+                image.src = "images/day.png";
+                image.alt = "Daytime mountain landscape";
+                image.dataset.mode = "day";
+                message.textContent = "It's a beautiful sunny day!";
+            }
+        }
+    </script>
+
+</body>
+</html>
